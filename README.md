@@ -2,13 +2,11 @@ Latest version: https://www.myweb.ttu.edu/vuphan/
 
 This version: 2016/11/27
 
-############################################################
-
-# STATEMENT OF PURPOSE
-
 Vu Hoang Nguyen Phan (Computer Science)
 
 ############################################################
+
+# STATEMENT OF PURPOSE
 
 To the Ph.D. Admissions Committee:
 
@@ -116,8 +114,6 @@ define a good cryptographic trapdoor function.
 ------------------------------------------------------------
 
 I appreciate your consideration.
-
-############################################################
 
 Regards,
 
