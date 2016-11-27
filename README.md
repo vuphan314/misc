@@ -2,19 +2,19 @@ Latest version: https://www.myweb.ttu.edu/vuphan/
 
 This version: 2016/11/26
 
-============================================================
+############################################################
 
 Vu Hoang Nguyen Phan
 
 (Computer Science)
 
-============================================================
+############################################################
 
 # CV
 
 vu.phan@ttu.edu
 
-============================================================
+############################################################
 
 ## EDUCATION
 
@@ -27,7 +27,7 @@ Computer Science & Math.
 - Collin College, Plano TX.
 - GPA 4.000/4.
 
-============================================================
+############################################################
 
 ## RESEARCH
 
@@ -69,7 +69,7 @@ Geometric Topology.
 - Advisor: Dr. Razvan Gelca
   (Math Department, Texas Tech University).
 
-============================================================
+############################################################
 
 ## WORK
 
@@ -109,7 +109,7 @@ Geometric Topology.
 2014: Math, Physics, Chemistry.
 - Supervisor: Mr. Dennis Keeton (Math Lab, Collin College)
 
-============================================================
+############################################################
 
 ## CONTESTS
 
@@ -128,7 +128,7 @@ American Mathematical Association of Two-Year Colleges.
 2013: Math Competition, Collin College.
 - Won the Precalculus Section.
 
-============================================================
+############################################################
 
 ## SCHOLARSHIPS
 
@@ -150,7 +150,7 @@ Financial Aid Office, Texas Tech University.
 2013-2014: Excellence Scholarship, Math Department,
 Collin College.
 
-============================================================
+############################################################
 
 ## COURSES
 - 2017/Spring: Abstract Algebra 2.
@@ -175,7 +175,7 @@ Collin College.
   - Instructor: Dr. Chris Monico
     (Math Department, Texas Tech University)
 
-============================================================
+############################################################
 
 ## TESTS
 
@@ -203,7 +203,7 @@ Internet-Based Test.
 - Note: waived due to my 4.5 years
   of U.S. undergraduate education.
 
-============================================================
+############################################################
 
 ## COMPUTER SKILLS
 - Programming Languages:
@@ -218,7 +218,7 @@ Internet-Based Test.
   - Git/GitHub
   - Windows/Ubuntu shells
 
-============================================================
+############################################################
 ## MIT "EXPERIENCE"
 
 In 2014, on Valentine's Day,
