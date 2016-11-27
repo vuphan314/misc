@@ -153,52 +153,53 @@ Collin College.
 ============================================================
 
 ## COURSES
-
-2017/Spring: Abstract Algebra 2.
-- Instructor: Dr. Dermot McCarthy
-  (Math Department, Texas Tech University)
-
-2016/Fall: Databases.
-- Instructor: Dr. Nelson Rushton
-  (Computer Science Department, Texas Tech University)
-
-2016/Spring: Algorithms.
-- Instructor: Dr. Michael Gelfond
-  (Computer Science Department, Texas Tech University)
-
-2015/Fall: Real Analysis 2.
-- Instructor: Dr. Razvan Gelca
-  (Math Department, Texas Tech University)
-
-2015/Spring: Automata.
-- Instructor: Dr. Michael Gelfond
-  (Computer Science Department, Texas Tech University)
-
-2015/Spring: Programming 1.
-- Instructor: Dr. Nelson Rushton
-  (Computer Science Department, Texas Tech University)
-
-2014/Fall: Proofs.
-- Instructor: Dr. Chris Monico
-  (Math Department, Texas Tech University)
+- 2017/Spring: Abstract Algebra 2.
+  - Instructor: Dr. Dermot McCarthy
+    (Math Department, Texas Tech University)
+- 2016/Fall: Databases.
+  - Instructor: Dr. Nelson Rushton
+    (Computer Science Department, Texas Tech University)
+- 2016/Spring: Algorithms.
+  - Instructor: Dr. Michael Gelfond
+    (Computer Science Department, Texas Tech University)
+- 2015/Fall: Real Analysis 2.
+  - Instructor: Dr. Razvan Gelca
+    (Math Department, Texas Tech University)
+- 2015/Spring: Automata.
+  - Instructor: Dr. Michael Gelfond
+    (Computer Science Department, Texas Tech University)
+- 2015/Spring: Programming 1.
+  - Instructor: Dr. Nelson Rushton
+    (Computer Science Department, Texas Tech University)
+- 2014/Fall: Proofs.
+  - Instructor: Dr. Chris Monico
+    (Math Department, Texas Tech University)
 
 ============================================================
 
 ## TESTS
 
 2015: GRE (Graduate Record Examination), General Test.
-- Quantitative 168/170 (95th percentile)
-- Verbal 153/170 (60th percentile)
-- Writing 3.5/6 (42nd percentile)
+- Quantitative
+  - 168/170 (95th percentile)
+- Verbal
+  - 153/170 (60th percentile)
+- Writing
+  - 3.5/6 (42nd percentile)
 - Note: officially reported to MIT on 2015/04.
 
 2012: TOEFL (Test of English as a Foreign Language),
 Internet-Based Test.
-- Total 104/120
-- Reading 29/30
-- Listening 28/30
-- Writing 24/30
-- Speaking 23/30
+- Total
+  - 104/120
+- Reading
+  - 29/30
+- Listening
+  - 28/30
+- Writing
+  - 24/30
+- Speaking
+  - 23/30
 - Note: waived due to my 4.5 years
   of U.S. undergraduate education.
 
@@ -218,7 +219,6 @@ Internet-Based Test.
   - Windows/Ubuntu shells
 
 ============================================================
-
 ## MIT "EXPERIENCE"
 
 In 2014, on Valentine's Day,
