@@ -115,6 +115,4 @@ define a good cryptographic trapdoor function.
 
 I appreciate your consideration.
 
-Regards,
-
-Vu Phan
+Regards,<br>Vu Phan
