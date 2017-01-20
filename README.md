@@ -116,3 +116,4 @@ define a good cryptographic trapdoor function.
 I appreciate your consideration.
 
 Regards,<br>Vu Phan
+hi\n\n
