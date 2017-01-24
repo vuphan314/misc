@@ -1,5 +1,4 @@
 function loop {
-  clear
   cd ..
   for d in $(find -mindepth 1 -maxdepth 1); do
     echo $d
@@ -10,4 +9,7 @@ function loop {
   done
 }
 
+############################################################
+
+clear
 loop
