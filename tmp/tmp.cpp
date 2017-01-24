@@ -4,11 +4,13 @@
 using namespace std;
 class Solution {
 public:
-    vector<int>& bars ();
-    int numBars;
-    vector<int>& sortedHeights ();
+    vector<int> barsVector;
+    vector<int>& bars = barsVector;
+    int numBars = 0;
+    vector<int> sortedHeightsVector;
+    vector<int>& sortedHeights = sortedHeightsVector;
     int largestRectangleArea(vector<int>& heights) {
-        vector<int>& bars = heights;
+        copy(heights.begin(), heights.end(), bars.begin());
         numBars = bars.size();
         set<int> s (bars.begin(), bars.end());
         sortedHeights.assign(s.begin(), s.end());
@@ -46,10 +48,14 @@ public:
         return currentHeight * baseLength;
     }
 };
+////////////////////////////////////////////////////////////
 int main() {
-    Solution solution = new Solution();
-    vector<int>& input = {1, 2};
-    int output = 2;
+    vector<int> inputVector;
+    vector<int>& input = inputVector;
+    input.push_back(432);
+    // int output = 0;
+    Solution solution;
     int maxArea = solution.largestRectangleArea(input);
-    cout << maxArea;
+    // bool check = output == maxArea;
+    cout << maxArea << "\n\n";
 }
