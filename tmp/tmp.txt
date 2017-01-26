@@ -1,1 +1,8 @@
-pipeline
+psw
+  program status word
+stages
+  fetch
+  decode
+  execute
+  load
+  write
