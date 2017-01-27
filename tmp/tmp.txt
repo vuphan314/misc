@@ -1,8 +1,7 @@
-psw
-  program status word
-stages
-  fetch
-  decode
-  execute
-  load
-  write
+f x**2 - 2*x - 3
+
+2*x - 2
+
+vertex (1, -4)
+
+x intercept
