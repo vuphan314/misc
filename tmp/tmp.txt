@@ -1,7 +1,5 @@
-f x**2 - 2*x - 3
+ab = ba = 1
 
-2*x - 2
+ac = ca = 0
 
-vertex (1, -4)
-
-x intercept
+acba = 0
