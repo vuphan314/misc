@@ -1,5 +1,0 @@
-ab = ba = 1
-
-ac = ca = 0
-
-acba = 0
