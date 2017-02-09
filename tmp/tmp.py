@@ -5,9 +5,12 @@ class Solution(object):
         :type rectangles: List[List[int]]
         :rtype: bool
         """
+        self.squares = set()
         rectangle = rectangles[0]
         totalArea = self.getArea(rectangle)
         leftMost, bottomMost, rightMost, topMost = rectangle
+        if self.isOverlapped(rectangle):
+            return False
         leftSet = {0}
         bottomSet = {0}
         rightSet = {0}
@@ -36,17 +39,29 @@ class Solution(object):
             if thisTop > topMost:
                 topSet = {i}
                 topMost = thisTop
+            if self.isOverlapped(thisRectangle):
+                return False
         cornerSets = leftSet & bottomSet, leftSet & topSet, rightSet & bottomSet, rightSet & topSet
         for cornerSet in cornerSets:
             if len(cornerSet) != 1:
                 return False
         superRectangle = [leftMost, bottomMost, rightMost, topMost]
         superArea = self.getArea(superRectangle)
-        self.plotRectangle(superRectangle)
+        # self.plotRectangle(superRectangle)
         return totalArea == superArea
     def getArea(self, rectangle):
         l, b, r, t = rectangle
         return (r - l) * (t - b)
+    def isOverlapped(self, rectangle):
+        l, b, r, t = rectangle
+        for x in range(l, r):
+            for y in range(b, t):
+                square = x, y
+                if square in self.squares:
+                    return True
+                else:
+                    self.squares.add(square)
+        return False
     def plotRectangle(self, rectangle):
         l, b, r, t = rectangle
         pp.scatter(l, b)
@@ -96,7 +111,7 @@ class Test(unittest.TestCase):
             False
         ]
         n = len(inputs)
-        for i in range(n - 1, n):
+        for i in range(0, n):
             returned_output = f(inputs[i])
             self.assertEqual(returned_output, expected_outputs[i])
 if __name__ == '__main__':
