@@ -1,3 +1,4 @@
+import matplotlib.pyplot as pp
 class Solution(object):
     def isRectangleCover(self, rectangles):
         """
@@ -53,7 +54,6 @@ class Solution(object):
         pp.grid()
         pp.show()
 ############################################################
-import matplotlib.pyplot as pp
 import unittest
 class Test(unittest.TestCase):
     def test(self):
@@ -99,7 +99,6 @@ class Test(unittest.TestCase):
         for i in range(n - 1, n):
             returned_output = f(inputs[i])
             self.assertEqual(returned_output, expected_outputs[i])
-
 if __name__ == '__main__':
     pass
     unittest.main()
