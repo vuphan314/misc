@@ -9,8 +9,7 @@ class Solution(object):
         rectangle = rectangles[0]
         totalArea = self.getArea(rectangle)
         leftMost, bottomMost, rightMost, topMost = rectangle
-        if self.isOverlapped(rectangle):
-            return False
+        self.isOverlapped(rectangle)
         leftSet = {0}
         bottomSet = {0}
         rightSet = {0}
