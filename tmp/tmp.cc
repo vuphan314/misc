@@ -41,7 +41,7 @@ void sortquick(vector<T> &A, size_t low, size_t high) {
 }
 
 int main(int argc, char const *argv[]) {
-  vector<int> A{6, 4, 4, 5, 3, -2, -49, 184, -38};
+  vector<int> A{7,2,5,1,29,6,4,19,11};
   sortquick(A, 0, A.size() - 1);
   for (auto el : A) {
     cout << el << ", ";

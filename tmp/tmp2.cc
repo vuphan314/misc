@@ -1,29 +1,29 @@
-// I don't know why your code is incorrect
-
 #include <iostream>
+
 using namespace std;
 
-int pivotselection(int [], int, int);
+int pivotselection(int*, int, int);
 
-void quicksort(int d[], int low, int high) {
+void quicksort(int* d, int low, int high) {
   int pivot_location;
 
-  if(low<high){
-    pivot_location = pivotselection(d,low,high);
-    quicksort(d,low,pivot_location);
-    quicksort(d,pivot_location+1,high);
+  if(low<high) {
+    pivot_location = pivotselection(d, low, high);
+    quicksort(d, low, pivot_location);
+    quicksort(d, pivot_location + 1, high);
   }
 }
 
-int pivotselection(int d[], int low, int high) {
+int pivotselection(int* d, int low, int high) {
   int pivot = d[low];
   int left = low;
   int x, i, n;
-  for(i = low + 1; i <= high; i++) {
+  for (i = low + 1; i <= high; i++) {
     if (d[i] < pivot) {
       x = d[i];
       d[i] = d[left];
       d[left] = x;
+
       left = left + 1;
     }
   }
@@ -34,29 +34,37 @@ int pivotselection(int d[], int low, int high) {
   return left;
 }
 
-int main() {
-  int d = 4;
-  int a[] = {4,8,2,5};
-  int b;
+void mainHardCoded() {
+  int d = 9;
+  int a[d] = {7,2,5,1,29,6,4,19,11};
+
   quicksort(a, 0, d - 1);
   cout << "Quick sort ran..." << endl;
-  for (b = 0; b < d; b++) {
-    cout << a[b] << endl;
+
+  for (int b = 0; b < d; b++) {
+    cout << a[b] << " ";
   }
-/*
-  int x,b,d,a[20];
-  cout<<"Enter number here: "<<endl;
+}
+
+void mainUserInput() {
+  int b,d,a[20];
+
   cout<<"Enter how many elements in list"<<endl;
   cin>>d;
+
   cout<<"Enter element to add to the list"<<endl;
   for(b=0;b<d;b++){
     cin>>a[b];
   }
-  quicksort(a,0,d);
+
+  quicksort(a,0,d-1);
   cout<<"Quick sort ran..."<<endl;
   for(b=0; b<d;b++){
       cout<<a[b]<<endl;
   }
-*/
-return 0;
+}
+
+int main() {
+  // mainHardCoded();
+  mainUserInput();
 }
