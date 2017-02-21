@@ -1,4 +1,4 @@
-s#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -17,26 +17,25 @@ void quicksort(int* d, int low, int high) {
 int pivotselection(int* d, int low, int high) {
   int pivot = d[low];
   int left = low;
-  int x, i, n;
+  int x, i;
   for (i = low + 1; i <= high; i++) {
     if (d[i] < pivot) {
+      left = left + 1;
+
       x = d[i];
       d[i] = d[left];
       d[left] = x;
-
-      left = left + 1;
     }
   }
-  n = pivot;
-  pivot = d[left];
-  d[left] = n;
+  d[low] = d[left];
+  d[left] = pivot;
 
   return left;
 }
 
 void mainHardCoded() {
-  int d = 9;
-  int a[d] = {7,2,5,1,29,6,4,19,11};
+  int d = 3;
+  int a[d] = {20, 30, 10};
 
   quicksort(a, 0, d - 1);
   cout << "Quick sort ran..." << endl;
@@ -65,6 +64,6 @@ void mainUserInput() {
 }
 
 int main() {
-  // mainHardCoded();
-  mainUserInput();
+  mainHardCoded();
+  // mainUserInput();
 }
