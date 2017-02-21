@@ -1,5 +1,40 @@
-#tmp/
+############################################################
+# GitHub default ignores: C++
+############################################################
 
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+
+############################################################
+# GitHub default ignores: TeX
 ############################################################
 
 ## Core latex/pdflatex auxiliary files:
@@ -21,7 +56,7 @@
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-# *.pdf
+#*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
