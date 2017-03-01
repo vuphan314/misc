@@ -1,9 +1,9 @@
+set comm=git status
+
 @echo off
 goto starting
 
 :looping
-  set subm=git submodule update --remote
-  set comm=git status
   for /d %%d in (*) do (
     echo %%d
     cd %%d
