@@ -1,6 +1,6 @@
-function tmp_cpp {
+function tmp_cc {
   out_file=/tmp/tmp.out
-  g++ tmp.cpp -o $out_file
+  g++ tmp.cc -o $out_file
   $out_file
 }
 
@@ -13,5 +13,5 @@ function tmp_tex {
 ############################################################
 
 clear
-tmp_cpp
+tmp_cc
 # tmp_tex

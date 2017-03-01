@@ -1,49 +1,69 @@
+#include <iostream>
+
 using namespace std;
 
-#include <iostream>
-#include <vector>
+int pivotselection(int*, int, int);
 
-template<typename T>
-void swapIndicies(vector<T> &A, size_t i, size_t j) {
-  T tmp = A[i];
-  A[i] = A[j];
-  A[j] = tmp;
+void quicksort(int* d, int low, int high) {
+  int pivot_location;
+
+  if(low<high) {
+    pivot_location = pivotselection(d, low, high);
+    quicksort(d, low, pivot_location);
+    quicksort(d, pivot_location + 1, high);
+  }
 }
 
-template<typename T>
-void swapElement(vector<T> &A, size_t i, T &el) {
-  T tmp = A[i];
-  A[i] = el;
-  el = tmp;
-}
+int pivotselection(int* d, int low, int high) {
+  int pivot = d[low];
+  int left = low;
+  int x, i;
+  for (i = low + 1; i <= high; i++) {
+    if (d[i] < pivot) {
+      left = left + 1;
 
-template<typename T>
-T getPivot(vector<T> &A, size_t low, size_t high) {
-  T pivot = A[low];
-  size_t left = low;
-  for (size_t i = low + 1; i <= high; i++) {
-    if (A[i] < pivot) {
-      swapIndicies(A, i, left);
-      left++;
+      x = d[i];
+      d[i] = d[left];
+      d[left] = x;
     }
   }
-  swapElement(A, left, pivot);
+  d[low] = d[left];
+  d[left] = pivot;
+
   return left;
 }
 
-template<typename T>
-void sortquick(vector<T> &A, size_t low, size_t high) {
-  if (low < high) {
-    size_t pivot = getPivot(A, low, high);
-    sortquick(A, low, pivot);
-    sortquick(A, pivot + 1, high);
+void mainHardCoded() {
+  int d = 3;
+  int a[d] = {20, 30, 10};
+
+  quicksort(a, 0, d - 1);
+  cout << "Quick sort ran..." << endl;
+
+  for (int b = 0; b < d; b++) {
+    cout << a[b] << " ";
   }
 }
 
-int main(int argc, char const *argv[]) {
-  vector<int> A{6, 4, 4, 5, 3, -2, -49, 184, -38};
-  sortquick(A, 0, A.size() - 1);
-  for (auto el : A) {
-    cout << el << ", ";
+void mainUserInput() {
+  int b,d,a[20];
+
+  cout<<"Enter how many elements in list"<<endl;
+  cin>>d;
+
+  cout<<"Enter element to add to the list"<<endl;
+  for(b=0;b<d;b++){
+    cin>>a[b];
   }
+
+  quicksort(a,0,d-1);
+  cout<<"Quick sort ran..."<<endl;
+  for(b=0; b<d;b++){
+      cout<<a[b]<<endl;
+  }
+}
+
+int main() {
+  mainHardCoded();
+  // mainUserInput();
 }
