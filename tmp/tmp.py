@@ -5,23 +5,18 @@ from sympy import *
 
 ############################################################
 
-var('x')
-
-M = [
-    [3 - 2*x**3 , -4 + 2*x**2 + 4*x**3, 0],
-    [-x**3, 1 + x**2 + 2*x**3, 0],
-    [-2 - 4*x**2, -4 + 8*x**2, 2 + 2*x**2]
-]
-
-M = Matrix(M)
-
-d = M.det()
-d = simplify(d)
-
-i = M**-1
-i = simplify(i)
+def get_turnaround(times):
+    previous = 0
+    total = 0
+    for time in times:
+        total += previous + time
+        previous += time
+    return total / len(times)
 
 ############################################################
 
-print(d)
-print(i)
+if __name__ == '__main__':
+    times = [2, 4, 1, 1, 1]
+    times = sorted(times)
+    turnaround = get_turnaround(times)
+    print(turnaround)
