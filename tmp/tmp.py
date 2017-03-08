@@ -1,9 +1,13 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 
 from math import *
-# from sympy import *
+from sympy import *
 
 ############################################################
+"""OS"""
+
+def os():
+    pass
 
 def get_turnaround(times):
     previous = 0
@@ -12,6 +16,15 @@ def get_turnaround(times):
         total += previous + time
         previous += time
     return total / len(times)
+
+############################################################
+"""TUTOR"""
+
+def tutor():
+    m = [1, 1, 1], [1, 1, 2], [2, 1, 1]
+    m = Matrix(m)
+    m = m.rref()
+    print(m)
 
 def A(x, y, z):
     return exp(-x**2 - y**2 / 4 - z**2 / 9)
@@ -37,14 +50,5 @@ def unit(v):
 ############################################################
 
 if __name__ == '__main__':
-    # times = [2, 4, 1, 1, 1]
-    # times = sorted(times)
-    # turnaround = get_turnaround(times)
-    # print(turnaround)
-    p = 1, 1, -1
-    v = fx(*p), fy(*p), fz(*p)
-    n = norm(v)
-    # print(v)
-    # print(n)
-    u = unit(v)
-    print(u)
+    # os()
+    tutor()
