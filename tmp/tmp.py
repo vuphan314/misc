@@ -21,7 +21,8 @@ def get_turnaround(times):
 """TUTOR"""
 
 def tutor():
-    m = [1, 1, 1], [1, 1, 2], [2, 1, 1]
+    var('x y z')
+    m = [2, -6, x], [5, -15, y], [2, 1, z]
     m = Matrix(m)
     m = m.rref()
     print(m)
