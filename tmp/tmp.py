@@ -4,25 +4,10 @@ from math import *
 from sympy import *
 
 ############################################################
-"""OS"""
-
-def os():
-    pass
-
-def get_turnaround(times):
-    previous = 0
-    total = 0
-    for time in times:
-        total += previous + time
-        previous += time
-    return total / len(times)
-
-############################################################
 """TUTOR"""
 
 def tutor():
-    var('x y z')
-    m = [2, -6, x], [5, -15, y], [2, 1, z]
+    m = [1, 2, 0], [2, -1, 1]
     m = Matrix(m)
     m = m.rref()
     print(m)
@@ -49,8 +34,22 @@ def unit(v):
     return a / n, b / n, c / n
 
 ############################################################
+"""OS"""
+
+def os():
+    pass
+
+def get_turnaround(times):
+    previous = 0
+    total = 0
+    for time in times:
+        total += previous + time
+        previous += time
+    return total / len(times)
+
+############################################################
 
 if __name__ == '__main__':
     pass
+    tutor()
     # os()
-    # tutor()
