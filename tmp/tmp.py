@@ -7,9 +7,11 @@ from sympy import *
 """TUTOR"""
 
 def tutor():
-    m = [1, 2, 0], [2, -1, 1]
+    var('k')
+    m = [7, -4, -5], [-4, 5, 11], #[0, 6, k]
     m = Matrix(m)
-    m = m.rref()
+    m = m.rref(simplify=True)
+    # m = m.columnspace()
     print(m)
 
 def A(x, y, z):
