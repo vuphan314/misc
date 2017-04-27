@@ -7,12 +7,11 @@ from sympy import *
 """TUTOR"""
 
 def tutor():
-    var('k')
-    m = [7, -4, -5], [-4, 5, 11], #[0, 6, k]
-    m = Matrix(m)
-    m = m.rref(simplify=True)
-    # m = m.columnspace()
-    print(m)
+    var('x k')
+    m = Matrix([[4, k], [6, -7]])
+    p = m.charpoly(x)
+    p = factor(p)
+    print(p)
 
 def A(x, y, z):
     return exp(-x**2 - y**2 / 4 - z**2 / 9)
