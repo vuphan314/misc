@@ -5,7 +5,7 @@ The student and I worked on the tasks they sought assistance in and I ensured th
 capstone
 
 # OS
-doing 4.1.3
+doing 4.1.6
 
 # ENGL
 2305, 2306, 2307, 2308, 2351, 2388, 2391
