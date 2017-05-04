@@ -7,31 +7,62 @@ from sympy import *
 """TUTOR"""
 
 def tutor():
-    P = Matrix([[-1, -3], [-3, -10]])
-    Ap = Matrix([[4, 7], [2, 6]])
-    A = P * Ap * P**-1
-    print(A)
+    # u1 = [2, -1, -1, 0]
+    # u2 = [-1, 0, -2, 1]
+    # v3 = [-0.5, 4, 1, 4.5]
+    # u3 = add(v3, mul(-1, add(proj(u1, v3), proj(u2, v3))))
+    # print(u3)
+    v1 = [1, 0, 2, -1]
+    v2 = [0, 1, -1, 1]
+    vs = [v1, v2]
+    es = gram(vs)
+    print(es)
 
-def A(x, y, z):
-    return exp(-x**2 - y**2 / 4 - z**2 / 9)
+def gram(vs):
+    n = len(vs)
+    zero = []
+    us = []
+    for k in range(n):
+        s = proj(us[0], vs[1])
+        for j in range(k - 1):
+            
+        us.
 
-def fx(x, y, z):
-    return -400 * x * A(x, y, z)
+    v1, v2 = vs
+    u1 = v1
+    u2 = add(v2, mul(-1, proj(u1, v2)))
+    us = [u1, u2]
+    es = [unit(u) for u in us]
+    return es
 
-def fy(x, y, z):
-    return -100 * y * A(x, y, z)
+def proj(u, v):
+    c = dot(u, v) / dot(u, u)
+    return mul(c, u)
 
-def fz(x, y, z):
-    return -400 / 9 * z * A(x, y, z)
+def mul(c, v):
+    v0 = []
+    for e in v:
+        v0.append(c * e)
+    return v0
 
-def norm(v):
-    a, b, c = v
-    return sqrt(a**2 + b**2 + c**2)
+def add(v1, v2):
+    v = []
+    for i in range(len(v1)):
+        v.append(v1[i] + v2[i])
+    return v
 
 def unit(v):
-    n = norm(v)
-    a, b, c = v
-    return a / n, b / n, c / n
+    c = 1 / norm(v)
+    return mul(c, v)
+
+def norm(v):
+    return sqrt(dot(v, v))
+
+def dot(v1, v2):
+    s = 0
+    for i in range(len(v1)):
+        s += v1[i] * v2[i]
+    return s
 
 ############################################################
 """OS"""
