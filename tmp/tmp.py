@@ -7,53 +7,41 @@ from sympy import *
 """TUTOR"""
 
 def tutor():
-    # u1 = [2, -1, -1, 0]
-    # u2 = [-1, 0, -2, 1]
-    # v3 = [-0.5, 4, 1, 4.5]
-    # u3 = add(v3, mul(-1, add(proj(u1, v3), proj(u2, v3))))
-    # print(u3)
     v1 = [1, 0, 2, -1]
     v2 = [0, 1, -1, 1]
     vs = [v1, v2]
-    es = gram(vs)
-    print(es)
+    gram(vs)
 
 def gram(vs):
-    n = len(vs)
-    zero = []
     us = []
-    for k in range(n):
-        s = proj(us[0], vs[1])
+    for k in range(len(vs)):
+        u = vs[k]
         for j in range(k - 1):
-            
-        us.
-
-    v1, v2 = vs
-    u1 = v1
-    u2 = add(v2, mul(-1, proj(u1, v2)))
-    us = [u1, u2]
+            u = add(u, mult(-1, proj(us[j], vs[k])))
+        us.append(u)
     es = [unit(u) for u in us]
-    return es
+    print('us:', us)
+    print('es:', es)
 
 def proj(u, v):
     c = dot(u, v) / dot(u, u)
-    return mul(c, u)
+    return mult(c, u)
 
-def mul(c, v):
-    v0 = []
-    for e in v:
-        v0.append(c * e)
-    return v0
+def unit(v):
+    c = 1 / norm(v)
+    return mult(c, v)
+
+def mult(c, v):
+    w = []
+    for x in v:
+        w.append(c * x)
+    return w
 
 def add(v1, v2):
     v = []
     for i in range(len(v1)):
         v.append(v1[i] + v2[i])
     return v
-
-def unit(v):
-    c = 1 / norm(v)
-    return mul(c, v)
 
 def norm(v):
     return sqrt(dot(v, v))
