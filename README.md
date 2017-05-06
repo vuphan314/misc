@@ -5,7 +5,7 @@ The student and I worked on the tasks they sought assistance in and I ensured th
 capstone
 
 # OS
-done chapter 4
+doing chapter 5
 
 # ENGL
 2305, 2306, 2307, 2308, 2351, 2388, 2391
