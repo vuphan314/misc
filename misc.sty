@@ -1,3 +1,6 @@
+\usepackage{enumitem}
+\setlist[enumerate]{label*=\arabic*.}
+
 \usepackage{listings}
 
 \usepackage{multicol}
@@ -53,6 +56,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \theoremstyle{definition} % non-italic
+
+% letters
+\newcommand{\Set}[1]{\mathbb{#1}}
+\newcommand{\N}{\Set{N}}
+\newcommand{\Z}{\Set{Z}}
+\newcommand{\Q}{\Set{Q}}
+\newcommand{\R}{\Set{R}}
+\newcommand{\C}{\Set{C}}
+\renewcommand{\H}{\Set{H}}
 
 % surrounders
 \newcommand{\quotes}[1]{``#1''}
