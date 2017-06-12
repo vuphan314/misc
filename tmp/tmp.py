@@ -53,22 +53,7 @@ def dot(v1, v2):
     return s
 
 ############################################################
-"""OS"""
-
-def os():
-    pass
-
-def get_turnaround(times):
-    previous = 0
-    total = 0
-    for time in times:
-        total += previous + time
-        previous += time
-    return total / len(times)
-
-############################################################
 
 if __name__ == '__main__':
     pass
     tutor()
-    # os()
