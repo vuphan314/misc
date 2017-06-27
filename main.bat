@@ -9,14 +9,13 @@ goto starting
     cd %%d
     %comm%
     cd ..
-    echo ===================================================
+    echo =======================================================================
   )
   goto ending
 
 :starting
-  cls
   set currDir=%cd%
-  cd /d D:/repos/
+  cd /d D:\repos\
   goto looping
 
 :ending
