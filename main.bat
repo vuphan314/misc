@@ -14,6 +14,7 @@ goto starting
   goto ending
 
 :starting
+  cls
   set currDir=%cd%
   cd /d D:\repos\
   goto looping
