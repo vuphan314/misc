@@ -10,7 +10,7 @@ init_printing()
 
 def tutor():
     var('u v')
-    X = Matrix([3*u / (u**2 + v**2), 9*v / (u**2 + v**2)])
+    X = Matrix([-3*u / (u**2 + v**2), 9*v / (u**2 + v**2)])
     Y = Matrix([u, v])
     p = X.jacobian(Y).det()
     print(p)
