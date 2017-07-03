@@ -6,11 +6,14 @@ from sympy import *
 ############################################################
 """TUTOR"""
 
+init_printing()
+
 def tutor():
-    v1 = [1, 0, 2, -1]
-    v2 = [0, 1, -1, 1]
-    vs = [v1, v2]
-    gram(vs)
+    var('u v')
+    X = Matrix([3*u / (u**2 + v**2), 9*v / (u**2 + v**2)])
+    Y = Matrix([u, v])
+    p = X.jacobian(Y).det()
+    print(p)
 
 def gram(vs):
     us = []
