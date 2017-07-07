@@ -4,16 +4,6 @@ from math import *
 from sympy import *
 
 ################################################################################
-"""TUTOR"""
-
-init_printing()
-
-def tutor():
-    var('u v')
-    X = Matrix([-3*u / (u**2 + v**2), 9*v / (u**2 + v**2)])
-    Y = Matrix([u, v])
-    p = X.jacobian(Y).det()
-    print(p)
 
 def gram(vs):
     us = []
@@ -59,4 +49,3 @@ def dot(v1, v2):
 
 if __name__ == '__main__':
     pass
-    tutor()
