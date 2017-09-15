@@ -1,26 +1,28 @@
-function set_cmd { # $@
+function set_action { # $@
   if [[ -z $@ ]]; then
-    cmd="git status"
+    action="git status"
   else
-    cmd=$@
+    action=$@
   fi
 }
 
 ################################################################################
 
-function loop { # $@
-  set_cmd $@
-  cd ..
+function walk { # $@
+  set_action $@
+  caller_path=$(pwd)
+  cd ~/github/
   for d in $(find -mindepth 1 -maxdepth 1); do
     echo $d
     cd $d
-    $cmd
+    $action
     echo =======================================================================
     cd ..
   done
+  cd $caller_path
 }
 
 ################################################################################
 
 clear
-loop $@
+walk $@
