@@ -1,7 +1,7 @@
 object Tmp {
-  val C = 0
+  val c = 0
 
   def main(args: Array[String]) {
-    println(C)
+    println(c)
   }
 }

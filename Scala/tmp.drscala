@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drscala version="drscala-20170925-200815">
+  <project autorefresh="false" build="" main="" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="tmpTest.scala" package="" timestamp="25-Sep-2017 21:30:12">
+        <select from="357" to="357"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="tmp.scala" package="" timestamp="25-Sep-2017 21:28:40">
+        <select from="357" to="357"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drscala>

@@ -4,7 +4,7 @@ import junit.framework.TestCase;
   * Every method starting with the word "test" will be called when running
   * the test with JUnit.
   */
-public class DrTest extends TestCase {
+public class TmpTest extends TestCase {
 
   /** A test method.
     * (Replace "X" with a name describing the test.  You may write as
