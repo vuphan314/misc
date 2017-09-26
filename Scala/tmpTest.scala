@@ -14,6 +14,7 @@ class TmpTest(name: String) extends TestCase(name) {
     *  one will be called when running JUnit over this class.)
     */
   def testX() {
+    assertTrue(Tmp.c == 0)
   }
 
   /** Sample test method which tests no program code. */

@@ -12,6 +12,7 @@ public class TmpTest extends TestCase {
     * one will be called when running JUnit over this class.)
     */
   public void testX() {
+    assertTrue(Tmp.c == 0);
   }
 
 }
