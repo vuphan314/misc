@@ -1,5 +1,6 @@
 import junit.framework.TestCase
-import org.junit.Assert._
+// import org.junit.Assert._
+import junit.framework.Assert._
 
 /**
  * A JUnit test case class.
