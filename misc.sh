@@ -1,3 +1,4 @@
+
 function set_action { # $@
   if [[ -z $@ ]]; then
     action="git status"
