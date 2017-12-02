@@ -18,6 +18,7 @@ function set_action {
 
 function execute_ls {
   cd
+  rm -f GlobalModel.txt
   tree -L 2
 }
 
