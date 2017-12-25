@@ -1,7 +1,34 @@
 #!/usr/bin/python3
 
-from math import *
-from sympy import *
+from itertools import *
+
+################################################################################
+
+def subsetsum(less=False, greater=False):
+    def good(combination, tolerance):
+        diff = sum(combination) - goal
+        return -tolerance <= diff <= 0 if less else \
+            tolerance >= diff >= 0 if greater else abs(diff) <= tolerance
+    multiset = ([1000, 771, 880, 1300, 1300, 900, 1300, 1300, 400, 1300])
+    goal = 5021
+    tolerable = []
+    tolerance = -1
+    while not tolerable:
+        tolerance += 1
+        for combination in powerset(multiset):
+            if good(combination, tolerance):
+                tolerable.append(combination)
+    mode = 'less' if less else 'greater' if greater else 'abs'
+    print('mode: {}, tolerance: {}'.format(mode, tolerance))
+    for combination in tolerable:
+        print(sum(combination), combination)
+    print()
+
+def powerset(iterable):
+    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
+
 
 ################################################################################
 
@@ -48,4 +75,6 @@ def dot(v1, v2):
 ################################################################################
 
 if __name__ == '__main__':
-    pass
+    subsetsum(less=True)
+    subsetsum(greater=True)
+    subsetsum()
