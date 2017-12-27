@@ -9,8 +9,8 @@ def subsetsum(less=False, greater=False):
         diff = sum(combination) - goal
         return -tolerance <= diff <= 0 if less else \
             tolerance >= diff >= 0 if greater else abs(diff) <= tolerance
-    multiset = ([1000, 771, 880, 1300, 1300, 900, 1300, 1300, 400, 1300])
-    goal = 5021
+    multiset = [975, 975, 675, 975, 975, 975]
+    goal = 4360
     tolerable = []
     tolerance = -1
     while not tolerable:
