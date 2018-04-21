@@ -1,57 +1,56 @@
-# COMP 511: Written Assignment 2
+# COMP 511: Written Assignment 3
 Vu Phan, `vhp1`
 
 ## Topic
-type inference
+continuation-passing-style (CPS) transformations
 
 ## Exemplifying PL feature or idiom
-Scala compiler's local type inference (not Hindley-Milner global type inference)
+Python's idioms for transforming from direct style to CPS
 
 ## Description of features and limitations
 
-### Scala
+### Features
 
-- The Scala compiler can infer expression types in some cases.
+In Python, a function often returns a value (direct style).
+```py
+def successor(x): return x + 1
+```
+In this case, it is implicit where the value `x + 1` will be returned to.
 
-  ```scala
-  val name = "Alan"
-  ```
+To make it explicit, we can make the function `successor` continue with the value `x + 1` by passing it as an argument to a *continuation*.
+The idiomatic way to do that is:
+```py
+def successor(x, c): # CPS, where `c` is the continuation (a unary function)
+  c(x + 1)
+```
+In some sense, continuations are *`goto`s with arguments*.
 
-  The inferred type for the value `name` is `String`.
+CPS transformations apply to not only user-defined functions but also built-in operations.
+For example:
+```py
+def plus(x, y, c): c(x + y)
+```
 
-- The compiler can also infer the result type of a non-recursive method.
+In CPS, we turn function applications inside out.
+That is, a more outer function application corresponds to a more deeply nested continuation.
+For instance, consider the following complete program.
+```py
+def successor(x, c): c(x + 1)
 
-  ```scala
-  def minus(x: Int) = -x
+def plus(x, y, c): c(x + y)
 
-  ```
-  In this case, the inferred result type is `Int`.
+def plus_successor(x, y, c): # does (x + 1) + y
+  successor(x, lambda v, y=y, c=c: plus(v, y, c))
+```
 
-- However, result type inference fails for recursive functions.
+### Limitations
 
-  ```scala
-  def factorial(n: Int) = if (n < 2) 1 else n * factorial(n - 1) // fails
-
-  ```
-  The programmer must explicitly specify that a `factorial` application returns an `Int`.
-
-- Also, the compiler may infer a too specific type.
-
-  ```scala
-  var v = null
-  v = new Object() // fails
-  ```
-
-  The compiler evaluates line 1 above and infers that `v` is of the singleton type `Null`. So the programmer cannot later reassign a non-`null` value to `v` as in line 2.
-
-### Scala versus Jam
-
-A big difference between Scala and Jam is: Scala employs local type inference instead of Hindley-Milner global type inference. The reason is that Hindley-Milner inference does not work with object-oriented programming (more specifically, type-polymorphism).
-
-Another difference is that the Scala syntax is more flexible than the typed Jam syntax (both with type annotations as in project 5 and without them as in project 5xc). In Scala, some type annotations are optional, such as the result type of a non-recursive function.
+Although CPS' explicit control flows enable us to manipulate execution much more freely, they also have disadvantages.
+0. First, CPS code is harder to read than direct style code, which is more familiar to most programmers.
+As shown in the complete Python program above, CPS code distracts readers with technical mechanisms of control flow reification (all the continuations being explicitly passed as arguments).
+0. Second, similar to their `goto` analogy, continuations are potential traps for buggy spaghetti code. A programmer may accidentally mutate a continuation, creating a subtle bug that is hard to track down.
 
 ## Reference
 
-[https://docs.scala-lang.org/tour/type-inference.html](https://docs.scala-lang.org/tour/type-inference.html)
-
-[https://stackoverflow.com/a/3691495](https://stackoverflow.com/a/3691495)
+[https://www.ps.uni-saarland.de/~duchier/python/continuations.html](https://www.ps.uni-saarland.de/~duchier/python/continuations.html)
+[https://softwareengineering.stackexchange.com/a/278798](https://softwareengineering.stackexchange.com/a/278798)
