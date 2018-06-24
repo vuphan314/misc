@@ -27,7 +27,7 @@ function execute_ls {
 
 ## receives $action
 function execute_git {
-  cd ~/github/
+  cd ~/code/
   for d in $(find -mindepth 1 -maxdepth 1); do
     echo $d
     cd $d
