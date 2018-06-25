@@ -18,7 +18,7 @@ function set_action {
 
 function execute_ls {
   cd
-  rm -rf Documents/ViberDownloads/
+  rm -rf Documents/ViberDownloads
   rm -f GlobalModel.txt
   tree -L 2 --dirsfirst
 }
@@ -27,7 +27,7 @@ function execute_ls {
 
 ## receives $action
 function execute_git {
-  cd ~/code/
+  cd $HOME/code/
   for d in $(find -mindepth 1 -maxdepth 1); do
     echo $d
     cd $d
