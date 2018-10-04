@@ -18,7 +18,6 @@ function set_action {
 
 function execute_ls {
   cd
-  # rm -rf Documents/ViberDownloads
   rm -f GlobalModel.txt
   tree -L 2 --dirsfirst
 }
