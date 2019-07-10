@@ -16,7 +16,7 @@ goto starting
 :starting
   cls
   set currDir=%cd%
-  cd /d C:\Users\Vu\code\
+  cd /d C:\Users\vhp1\code\
   goto looping
 
 :ending
