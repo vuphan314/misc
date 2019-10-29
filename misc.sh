@@ -23,7 +23,7 @@ function set_action {
 function execute_ls {
   cd
   rm -f GlobalModel.txt
-  tree -L 2 --dirsfirst -I 'bin|ViberDownloads|Music|Public|snap|Templates|Zotero'
+  tree -L 2 --dirsfirst -I 'Arduino|bin|ViberDownloads|Music|Public|snap|Templates|Zotero'
 }
 
 ################################################################################
