@@ -5,125 +5,81 @@ from itertools import *
 
 ################################################################################
 
-def subsetsum(less=False, greater=False):
-    def good(combination, tolerance):
-        diff = sum(combination) - goal
-        return -tolerance <= diff <= 0 if less else \
-            tolerance >= diff >= 0 if greater else abs(diff) <= tolerance
-    multiset = [975, 975, 675, 975, 975, 975]
-    goal = 4360
-    tolerable = []
-    tolerance = -1
-    while not tolerable:
-        tolerance += 1
-        for combination in powerset(multiset):
-            if good(combination, tolerance):
-                tolerable.append(combination)
-    mode = 'less' if less else 'greater' if greater else 'abs'
-    print('mode: {}, tolerance: {}'.format(mode, tolerance))
-    for combination in tolerable:
-        print(sum(combination), combination)
-    print()
-
-def powerset(iterable):
-    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+def powerset(iterable): # [1,2,3] |-> [(), (0,), (1,), (2,), (0, 1), (0, 2), (1, 2), (0, 1, 2)]
     s = list(iterable)
-    return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
+    return list(chain.from_iterable(combinations(s, r) for r in range(len(s) + 1)))
 
 ################################################################################
-
-def gram(vs):
-    us = []
-    for k in range(len(vs)):
-        u = vs[k]
-        for j in range(k - 1):
-            u = add(u, mult(-1, proj(us[j], vs[k])))
-        us.append(u)
-    es = [unit(u) for u in us]
-    print('us:', us)
-    print('es:', es)
-
-def proj(u, v):
-    c = dot(u, v) / dot(u, u)
-    return mult(c, u)
-
-def unit(v):
-    c = 1 / norm(v)
-    return mult(c, v)
-
-def mult(c, v):
-    w = []
-    for x in v:
-        w.append(c * x)
-    return w
-
-def add(v1, v2):
-    v = []
-    for i in range(len(v1)):
-        v.append(v1[i] + v2[i])
-    return v
-
-def norm(v):
-    return sqrt(dot(v, v))
-
-def dot(v1, v2):
-    s = 0
-    for i in range(len(v1)):
-        s += v1[i] * v2[i]
-    return s
-
-################################################################################
+'''COMP 554 midterm'''
 
 def printPair(keyStr, value):
-    FLOAT_FORMAT = '{:4.2f}'
+    FLOAT_FORMAT = '{:.10f}'
     if type(value) == float:
         value = FLOAT_FORMAT.format(value)
-    print(keyStr.ljust(10), value)
+    print('\t', keyStr.ljust(15), value)
 
-def getBinFloatStrFromDecFractionalPartStr(decFractionalPartStr='.1875', recursionDepth=20):
-    fraction = Fraction(decFractionalPartStr)
-    assert 0 < fraction < 1
-    binDigits = []
+def getBase2DecStrFromBase10FractionalPartDecStr(base10FractionalPartDecStr, recursionDepth): # '.5' |-> '.1'
+    assert base10FractionalPartDecStr[0] == '.'
+    fraction = Fraction(base10FractionalPartDecStr)
+    bits = []
     for _ in range(recursionDepth):
         fraction *= 2
         if fraction < 1:
-            binDigits.append(0)
+            bits.append(0)
         elif fraction == 1:
-            binDigits.append(1)
+            bits.append(1)
             break
-        else:
-            binDigits.append(1)
+        else: # fraction > 1
+            bits.append(1)
             fraction -= 1
-    return ''.join([str(x) for x in binDigits])
-def getBinFloatStrFromDecFloatStr(decFloatStr='+21.1875', recursionDepth=20): # +0b10101.0011
-    sign = decFloatStr[0]
-    decFloatStr = decFloatStr[1:]
+    return ''.join([str(bit) for bit in bits])
+def getBase2DecStrFromBase10DecStr(base10DecStr, recursionDepth=20): # '+1.5 |-> '1.1'
+    sign = base10DecStr[0]
+    assert sign in {'+', '-'}
 
-    pointIndex = decFloatStr.index('.')
+    base10DecStr = base10DecStr[1:]
+    decPointIndex = base10DecStr.index('.')
 
-    integralPart = decFloatStr[:pointIndex]
-    integralPart = bin(int(integralPart))
+    base10IntegralPartDecStr = base10DecStr[:decPointIndex]
+    base2IntegralPartDecStr = bin(int(base10IntegralPartDecStr))
 
-    fractionalPart = decFloatStr[pointIndex:]
-    fractionalPart = getBinFloatStrFromDecFractionalPartStr(fractionalPart, recursionDepth)
+    base10FractionalPartDecStr = base10DecStr[decPointIndex:]
+    base2FractionalPartDecStr = getBase2DecStrFromBase10FractionalPartDecStr(base10FractionalPartDecStr, recursionDepth)
 
-    return sign + integralPart + '.' + fractionalPart
+    return sign + base2IntegralPartDecStr + '.' + base2FractionalPartDecStr
 
-def getDecFloatFromBinFractionalPartStr(mantissa='01111110100000000000000'):
-    decFloat = 1 # 1.{mantissa}
-    for i in range(len(mantissa)):
-        if mantissa[i] == '1':
-            decFloat += 2 ** -(i+1)
-    return decFloat
+def getBase10FloatFromBase2FractionalPartDecStr(base2FractionalPartDecStr): # '.1' |-> .5
+    base10Float = 0
+    for i in range(len(base2FractionalPartDecStr)):
+        if base2FractionalPartDecStr[i] == '1': # effectively skips leading '.'
+            base10Float += 2 ** -i
+    return base10Float
+def getBase10FloatFromBase2DecStr(base2DecStr): # '+1.1' |-> 1.5
+    assert base2DecStr[0] in {'+', '-'}
 
-def getDecIeeeFloatFromBinIeeeStr(binIeeeStr='11000100101111110100000000000000'):
-    sign = binIeeeStr[0]
-    exponent = binIeeeStr[1:9]
-    mantissa = binIeeeStr[9:]
+    sign = (-1) ** (base2DecStr[0] == '-')
+    base2DecStr = base2DecStr[1:]
+
+    decPointIndex = base2DecStr.index('.')
+
+    base2IntegralPartDecStr = base2DecStr[:decPointIndex]
+    base10IntegralPartDecStr = int(base2IntegralPartDecStr, base=2)
+
+    base2FractionalPartDecStr = base2DecStr[decPointIndex:]
+    base10FractionalPartDecStr = getBase10FloatFromBase2FractionalPartDecStr(base2FractionalPartDecStr)
+
+    return sign * (base10IntegralPartDecStr + base10FractionalPartDecStr)
+
+def getBase10FloatFromBase2MantissaStr(mantissa): # '10000000000000000000000' |-> .5
+    return 1 + getBase10FloatFromBase2FractionalPartDecStr('.' + mantissa)
+def getBase10FloatFromBase2IeeeStr(base2IeeeStr): # '00111111110000000000000000000000' |-> 1.5
+    sign = base2IeeeStr[0]
+    exponent = base2IeeeStr[1:9]
+    mantissa = base2IeeeStr[9:]
 
     signFactor = (-1) ** (sign == '1')
     exponentFactor = 2**(int(exponent, base=2) - 127)
-    mantissaFactor = getDecFloatFromBinFractionalPartStr(mantissa)
+    mantissaFactor = getBase10FloatFromBase2MantissaStr(mantissa)
 
     return signFactor * exponentFactor * mantissaFactor
 
@@ -135,7 +91,7 @@ def question05():
 
     def pipeline0():
         cycle = 2 * (MEM + REG) + DEC + ALU
-        print(cycle)
+        printPair('cycle', cycle)
 
     def pipeline3():
         fetch = MEM
@@ -161,37 +117,43 @@ def question05():
         printPair('write', write)
         printPair('cycle', cycle)
 
-    # pipeline0()
-    # pipeline3()
+    print('pipeline0')
+    pipeline0()
+
+    print('pipeline3')
+    pipeline3()
+
+    print('pipeline5')
     pipeline5()
 
 def question06():
-    def printHexNum():
-        hexNum = bin(0x136A60)[2:]
+    def analyzeBase16Num():
+        num = bin(0x136A60)[2:] # strips leading '0b'
 
-        sign = hexNum[0]
-        exponent = hexNum[1:8]
-        mantissa = hexNum[8:]
+        sign = num[0]
+        exponent = num[1:8]
+        mantissa = num[8:]
 
         printPair('sign', sign)
         printPair('exponent', exponent)
         printPair('mantissa', mantissa)
 
+    def analyzeBase10Num():
+        num = getBase2DecStrFromBase10DecStr('-21.1875')
+        print(num)
 
-    def printDecNum():
-        decNum = '-21.1875'
-        decNum = getBinFloatStrFromDecFloatStr(decNum)
-        print(decNum)
+    print('analyzeBase16Num')
+    analyzeBase16Num()
 
-    printHexNum()
-    printDecNum()
+    print('analyzeBase10Num')
+    analyzeBase10Num()
 
 def question13():
     def printColumn(nums):
         print('\n'.join(['\t{}'.format(num) for num in nums]))
 
     def printDiffs(nums, printing=True):
-        diffs = [nums[i+1] - nums[i] for i in range(len(nums) - 1)]
+        diffs = [nums[i + 1] - nums[i] for i in range(len(nums) - 1)]
         if printing:
             printColumn(diffs)
         return diffs
@@ -213,12 +175,52 @@ def question13():
     diffs4 = printDiffs(diffs3)
 
 def question14():
-    print(getDecIeeeFloatFromBinIeeeStr())
+    print(getBase10FloatFromBase2IeeeStr('11000100101111110100000000000000'))
+
+def question15():
+    num = bin(0xC5AB934D)[2:]
+    print(getBase10FloatFromBase2IeeeStr(num))
+
+def question16():
+    def row2():
+        print('row2')
+        base10DecStr = '+' + str(3 / 8)
+        base2DecStr = getBase2DecStrFromBase10DecStr(base10DecStr)
+        printPair('base2DecStr', base2DecStr)
+        printPair('base10DecStr', base10DecStr)
+    def row3():
+        print('row3')
+        base2DecStr = '+10.1101'
+        base10Float = getBase10FloatFromBase2DecStr(base2DecStr)
+        base10Fraction = Fraction(base10Float)
+        printPair('base10Fraction', base10Fraction)
+        printPair('base10Float', base10Float)
+    def row4():
+        print('row4')
+        base10DecStr = '+5.625'
+        base2DecStr = getBase2DecStrFromBase10DecStr(base10DecStr)
+        base10Fraction = Fraction(base10DecStr)
+        printPair('base10Fraction', base10Fraction)
+        printPair('base2DecStr', base2DecStr)
+
+    row2()
+    row3()
+    row4()
+
+def question22():
+    num = getBase10FloatFromBase2IeeeStr('00111101110011001100110011001101')
+    print(num)
+
+def midterm():
+    # question05()
+    # question06()
+    # question13()
+    # question14()
+    # question15()
+    # question16()
+    question22()
 
 ################################################################################
 
 if __name__ == '__main__':
-    # question05()
-    # question06()
-    # question13()
-    question14()
+    midterm()
