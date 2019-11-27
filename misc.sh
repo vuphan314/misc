@@ -31,7 +31,7 @@ function execute_ls {
 ## receives $action
 function execute_git {
   cd $HOME/code/
-  for d in $(find -mindepth 1 -maxdepth 1); do
+  for d in $(find -mindepth 1 -maxdepth 1 | sort); do
     echo $d
     cd $d
     $action
