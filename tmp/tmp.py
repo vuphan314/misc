@@ -10,7 +10,7 @@ KiB = 2**10
 MiB = 2**20
 GiB = 2**30
 
-def lg(x):
+def lg2(x):
     return log(x, 2)
 
 def powerset(iterable): # [1,2,3] |-> [(), (0,), (1,), (2,), (0, 1), (0, 2), (1, 2), (0, 1, 2)]
@@ -257,11 +257,11 @@ def answer_04_p1():
     blockSize = 256
 
     sets = cacheSize / blockSize
-    setBits = lg(sets)
+    setBits = lg2(sets)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
     tagBits = mainBits - blockBits - setBits
     print(tagBits)
@@ -272,11 +272,11 @@ def answer_04_p2():
     blockSize = KiB
 
     sets = cacheSize / blockSize
-    setBits = lg(sets)
+    setBits = lg2(sets)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
     tagBits = mainBits - blockBits - setBits
     print(tagBits)
@@ -287,9 +287,9 @@ def answer_04_p3():
     tagBits = 7
 
     sets = cacheSize / blockSize
-    setBits = lg(sets)
+    setBits = lg2(sets)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
     mainBits = tagBits + setBits + blockBits
     mainSize = 2**mainBits
@@ -301,9 +301,9 @@ def answer_04_p4():
     blockSize = 4 * KiB
     tagBits = 10
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
     setBits = mainBits - tagBits - blockBits
     sets = 2**setBits
@@ -316,7 +316,7 @@ def answer_04_p5():
     mainSize = 64 * MiB
     tagBits = 10
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
     setAndBlockBits = mainBits - tagBits
 
@@ -328,9 +328,10 @@ def answer_04_p6():
     cacheSize = 512 * KiB
     tagBits = 7
 
-    setAndBlockBits = lg(cacheSize)
+    setAndBlockBits = lg2(cacheSize)
 
     mainBits = tagBits + setAndBlockBits
+
     mainSize = 2**mainBits
     mainSize /= MiB
     print(mainSize, 'MiB')
@@ -339,9 +340,9 @@ def getSets(cacheSize, blockSize, blocksPerSet):
     return cacheSize / blockSize / blocksPerSet
 
 def getTagBits(mainBits, sets, blockSize):
-    setBits = lg(sets)
+    setBits = lg2(sets)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
     tagBits = mainBits - setBits - blockBits
     return tagBits
@@ -472,11 +473,11 @@ def answer_25_p1():
 
     blocks = cacheSize / blockSize
     sets = blocks / blocksPerSet
-    setBits = lg(sets)
+    setBits = lg2(sets)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
     tagBits = mainBits - setBits - blockBits
     print(tagBits)
@@ -489,11 +490,11 @@ def answer_25_p2():
 
     blocks = cacheSize / blockSize
     sets = blocks / blocksPerSet
-    setBits = lg(sets)
+    setBits = lg2(sets)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
     tagBits = mainBits - setBits - blockBits
     print(tagBits)
@@ -506,11 +507,12 @@ def answer_25_p3():
 
     blocks = cacheSize / blockSize
     sets = blocks / blocksPerSet
-    setBits = lg(sets)
+    setBits = lg2(sets)
 
-    blockBits = lg(blockSize)
+    blockBits = lg2(blockSize)
 
     mainBits = tagBits + setBits + blockBits
+
     mainSize = 2**mainBits
     mainSize /= MiB
     print(mainSize, 'MiB')
@@ -521,7 +523,7 @@ def answer_25_p4():
     tagBits = 10
     blocksPerSet = 4
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
     setAndBlockBits = mainBits - tagBits
 
@@ -536,7 +538,7 @@ def answer_25_p5():
     tagBits = 10
     blocksPerSet = 4
 
-    mainBits = lg(mainSize)
+    mainBits = lg2(mainSize)
 
     setAndBlockBits = mainBits - tagBits
 
@@ -552,7 +554,7 @@ def answer_25_p6():
     blocksPerSet = 8
 
     cacheSizePerWay = cacheSize / blocksPerSet
-    setAndBlockBits = lg(cacheSizePerWay)
+    setAndBlockBits = lg2(cacheSizePerWay)
 
     mainBits = tagBits + setAndBlockBits
 
