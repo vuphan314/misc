@@ -2,4 +2,4 @@
 
 ################################################################################
 
-find ~/Dropbox -iname "*conflict*" $@
+find ~/Dropbox -iname "*conflicted*" $@
