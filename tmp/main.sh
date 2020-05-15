@@ -1,7 +1,7 @@
 function main_cc {
   out_file=./tmp.out
   g++ -o $out_file tmp.cc -lgmp
-  $out_file
+  # $out_file
 }
 
 function main_tex {
@@ -12,5 +12,5 @@ function main_tex {
 
 ################################################################################
 
-# main_cc
-main_tex
+main_cc
+# main_tex
