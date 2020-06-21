@@ -8,7 +8,7 @@ function get_disk_usage {
     location=.
   fi
 
-  du $location -ah --max-depth=1 | sort -hr
+  du $location -ah --max-depth=1 | sort -h
 }
 
 ################################################################################
