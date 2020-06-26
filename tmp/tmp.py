@@ -673,7 +673,28 @@ def final():
     answers_28_37()
 
 ################################################################################
+'''projected model counting'''
+
+def counterexample():
+    B = [0, 1]
+    for f00 in B:
+        for f01 in B:
+            for f10 in B:
+                for f11 in B:
+                    pmc = max(f00, f01) + max(f10, f11)
+                    mmap = max(f00 + f10, f01 + f11)
+                    if pmc != mmap:
+                        print(
+                            'f00={}'.format(f00),
+                            'f01={}'.format(f01),
+                            'f10={}'.format(f10),
+                            'f11={}'.format(f11),
+                            'pmc={}'.format(pmc),
+                            'mmap={}'.format(mmap),
+                        )
+
+################################################################################
 
 if __name__ == '__main__':
-    # midterm()
-    final()
+    pass
+    counterexample()
