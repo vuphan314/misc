@@ -2,7 +2,7 @@
 
 ################################################################################
 
-ID_TAGS="addmc|phan|vhp|dudek|jmd|vardi|rice|nots"
+ID_TAGS="dpmc|addmc|phan|vhp|dudek|jmd|vardi|rice|nots"
 
 EXCLUDED_DIRS="{cudd-3.0.0,jet,rsynth,.git,.gitmodules}"
 
