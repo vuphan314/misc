@@ -2,17 +2,18 @@
 
 ################################################################################
 
-ID_TAGS="dpmc|addmc|phan|vhp|dudek|jmd|vardi|rice|nots"
+LOC="$1"
 
-EXCLUDED_DIRS="{cudd-3.0.0,jet,rsynth,.git,.gitmodules}"
+ID_TAGS="vu|phan|vhp|jeff|dudek|jmd|moshe|vardi|rice|nots"
+
+EXCLUDED_DIRS="{.git,lib,solvers}"
 
 EXCLUDED_FILES=".git*"
 
-COMMAND="grep --ignore-case --extended-regexp \"$ID_TAGS\" --dereference-recursive $1 --exclude-dir=$EXCLUDED_DIRS --exclude=\"$EXCLUDED_FILES\" --binary-files=without-match --color"
+COMMAND="grep --ignore-case --extended-regexp \"$ID_TAGS\" --dereference-recursive $LOC --exclude-dir=$EXCLUDED_DIRS --exclude="$EXCLUDED_FILES" --binary-files=without-match --color"
 
 ################################################################################
 
-echo $COMMAND $1
+echo $COMMAND
 echo
-
-eval $COMMAND $1
+eval $COMMAND
