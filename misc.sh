@@ -2,7 +2,7 @@
 
 ################################################################################
 
-LS="l"
+LS=l
 
 ################################################################################
 
@@ -21,22 +21,18 @@ function set_action {
 ################################################################################
 
 function execute_ls {
-  cd
-  rm -f GlobalModel.txt
-  tree -L 2 --dirsfirst -I 'anaconda3|Arduino|bin|code|go|snap|ViberDownloads|Zoom|Zotero'
+  tree ~ -L 2 --dirsfirst -I 'anaconda3|bin|code|snap|Zoom|Zotero'
 }
 
 ################################################################################
 
 ## receives $action
 function execute_git {
-  cd $HOME/code/
-  for d in $(find -mindepth 1 -maxdepth 1 | sort); do
+  for d in $(find ~/code -mindepth 1 -maxdepth 1 | sort); do
     echo $d
     cd $d
     $action
     echo =======================================================================
-    cd ..
   done
 }
 
@@ -45,14 +41,12 @@ function execute_git {
 ## receives $@
 ## sets $action
 function walk {
-  caller_path=$(pwd)
   set_action $@
   if [[ $action == $LS ]]; then
     execute_ls
   else
     execute_git
   fi
-  cd $caller_path
 }
 
 ################################################################################
