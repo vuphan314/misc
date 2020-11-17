@@ -8,6 +8,7 @@ export MANPATH="~/bin/man:$MANPATH"
 
 export PATH="~/bin:$PATH"
 export PATH="~/Dropbox/other/bin:$PATH"
+export PATH="~/code/ADDMC:$PATH"
 export PATH="~/code/DPMC:$PATH"
 export PATH="~/code/DPMC/common:$PATH"
 export PATH="~/code/DPMC/lg:$PATH"
