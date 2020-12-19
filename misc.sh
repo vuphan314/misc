@@ -12,7 +12,7 @@ function set_action {
   if [[ $@ == $LS ]]; then
     action=$LS
   elif [[ -z $@ ]]; then
-    action="git status"
+    action="git status --short"
   else
     action=$@
   fi
