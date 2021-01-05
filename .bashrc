@@ -7,6 +7,7 @@ PS1="\e[33m\t \e[35m\u@\h \e[33m\w\e[m\n\$ "
 export MANPATH="~/Dropbox/bin/man:$MANPATH"
 export MANPATH="~/bin/man:$MANPATH"
 
+export PATH="~/Dropbox/doing/multicount:$PATH"
 export PATH="~/Dropbox/bin:$PATH"
 export PATH="~/bin:$PATH"
 export PATH="~/code/ADDMC:$PATH"
