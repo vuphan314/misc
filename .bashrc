@@ -2,7 +2,7 @@
 ## vhp1
 ################################################################################
 
-PS1="\e[33m\t \e[35m\u@\h \e[33m\w\e[m\n\$ "
+PS1="\e[33m\@ \e[35m\u@\h \e[33m\w\e[m\n\$ "
 
 export MANPATH="~/bin/man:$MANPATH"
 export MANPATH="~/Dropbox/bin/man:$MANPATH"
