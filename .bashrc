@@ -6,18 +6,19 @@ alias l="ls -lh"
 
 ################################################################################
 
-export MANPATH="~/bin/man:$MANPATH"
-export MANPATH="~/Dropbox/bin/man:$MANPATH"
+# export MANPATH="$MANPATH:~/bin/man"
+export MANPATH="$MANPATH:~/Dropbox/bin/man"
 
-export PATH="~/bin:$PATH"
-export PATH="~/code/dpmc/addmc:$PATH"
-export PATH="~/code/dpmc/lg:$PATH"
-export PATH="~/code/dpmc/lg/build:$PATH"
-export PATH="~/code/misc:$PATH"
-export PATH="~/code/multicount:$PATH"
-export PATH="~/code/ssat/bin:$PATH"
-export PATH="~/Dropbox/bin:$PATH"
-export PATH="~/Dropbox/code:$PATH"
+# export PATH="$PATH:~/bin"
+export PATH="$PATH:~/bin/diff-so-fancy"
+export PATH="$PATH:~/code/dpmc/addmc"
+export PATH="$PATH:~/code/dpmc/lg"
+export PATH="$PATH:~/code/dpmc/lg/build"
+export PATH="$PATH:~/code/misc"
+export PATH="$PATH:~/code/multicount"
+export PATH="$PATH:~/code/ssat/bin"
+export PATH="$PATH:~/Dropbox/bin"
+export PATH="$PATH:~/Dropbox/code"
 
 ################################################################################
 
