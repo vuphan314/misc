@@ -4,6 +4,9 @@
 
 alias l="ls -lh"
 
+alias vpn="/opt/cisco/anyconnect/bin/vpn"
+alias vpnui="/opt/cisco/anyconnect/bin/vpnui"
+
 ################################################################################
 
 export MANPATH="$MANPATH:~/bin/man"
