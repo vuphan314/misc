@@ -4,8 +4,9 @@
 
 alias l="ls -lh"
 
-alias vpn="/opt/cisco/anyconnect/bin/vpn"
-alias vpnui="/opt/cisco/anyconnect/bin/vpnui"
+alias connect="sudo openconnect --no-dtls connect.rice.edu"
+
+alias nots="ssh nots.rice.edu"
 
 ################################################################################
 
