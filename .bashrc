@@ -4,8 +4,9 @@
 
 alias l="ls -lh"
 
-alias connect="sudo openconnect --no-dtls connect.rice.edu"
+alias notebook="jupyter notebook 2>/dev/null &"
 
+alias connect="sudo openconnect --no-dtls connect.rice.edu"
 alias nots="ssh nots.rice.edu"
 
 ################################################################################
