@@ -22,7 +22,7 @@ export PATH="$PATH:~/code/misc"
 export PATH="$PATH:~/code/ssat/bin"
 export PATH="$PATH:~/code/stocount"
 export PATH="$PATH:~/Dropbox/bin"
-export PATH="$PATH:~/Dropbox/code/misc"
+export PATH="$PATH:~/Dropbox/code"
 
 ################################################################################
 
