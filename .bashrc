@@ -20,9 +20,9 @@ export PATH="$PATH:~/code/dpmc/lg"
 export PATH="$PATH:~/code/dpmc/lg/build"
 export PATH="$PATH:~/code/misc"
 export PATH="$PATH:~/code/ssat/bin"
+export PATH="$PATH:~/Dropbox/dper"
 export PATH="$PATH:~/Dropbox/main"
 export PATH="$PATH:~/Dropbox/main/bin"
-export PATH="$PATH:~/Dropbox/stocount"
 
 ################################################################################
 
