@@ -21,7 +21,7 @@ function set_action {
 ################################################################################
 
 function execute_ls {
-  tree ~ -L 2 --dirsfirst -I 'anaconda3|bin|code|snap|VirtualBox|vmware|Zotero'
+  tree ~ -L 2 --dirsfirst -I 'bin|CiscoSpark|code|snap|Zotero'
 }
 
 ################################################################################
