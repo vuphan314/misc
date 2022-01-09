@@ -2,12 +2,14 @@
 ## vhp1
 ################################################################################
 
-alias l="ls -lh"
+alias touchmap='xinput map-to-output "ELAN900C:00 04F3:2C6B" eDP-1' # Vu-Precision
 
-alias notebook="jupyter notebook 2>/dev/null &"
+alias l='ls -lh'
 
-alias connect="sudo openconnect --no-dtls connect.rice.edu -u vhp1"
-alias nots="ssh nots.rice.edu"
+alias notebook='jupyter notebook 2>/dev/null &'
+
+alias connect='sudo openconnect --no-dtls connect.rice.edu -u vhp1'
+alias nots='ssh nots.rice.edu'
 
 ################################################################################
 
