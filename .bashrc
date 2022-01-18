@@ -23,6 +23,7 @@ export PATH="$PATH:~/code/dpmcdev/lg/build"
 export PATH="$PATH:~/code/misc"
 export PATH="$PATH:~/code/ssat/bin"
 export PATH="$PATH:~/Dropbox/eval"
+export PATH="$PATH:~/Dropbox/eval/bin"
 export PATH="$PATH:~/Dropbox/main"
 export PATH="$PATH:~/Dropbox/main/bin"
 
