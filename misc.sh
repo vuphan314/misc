@@ -9,9 +9,7 @@ LS=l
 ## receives $@
 ## sets $action
 function set_action {
-  if [[ $@ == $LS ]]; then
-    action=$LS
-  elif [[ -z $@ ]]; then
+  if [[ -z $@ ]]; then
     action="git status --short"
   else
     action=$@
