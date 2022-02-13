@@ -4,7 +4,7 @@
 
 LOC="$1"
 
-ID_TAGS="vu|phan|vhp|jeff|dudek|jmd|moshe|vardi|rice|nots"
+ID_TAGS="vu|phan|vhp|jeff|dudek|jmd|zhiwei|zhang|zz|moshe|vardi|rice|nots"
 
 EXCLUDED_DIRS="{.git,lib,solvers}"
 
