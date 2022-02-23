@@ -8,10 +8,10 @@ def sortBibEntries(bibFilePath): # prints sorted entries to stdout
     entries = {} # entryLabel |-> entryLines
 
     lines = [line.strip() for line in open(bibFilePath)]
-    lines = [line for line in lines if line and line[0] != '%']
+    lines = [line for line in lines if line and not line.startswith('%')]
     for line in lines:
         if line[0] == '@':
-            entryLabel = line.split('{')[1][:-1]
+            entryLabel = line.split('{')[1][: -1]
             entries[entryLabel] = [line]
             entryLines = entries[entryLabel]
         else:
@@ -19,7 +19,7 @@ def sortBibEntries(bibFilePath): # prints sorted entries to stdout
 
     for entryLabel in sorted(entries):
         entryLines = entries[entryLabel]
-        print('\n  '.join(entryLines[:-1]))
+        print('\n  '.join(entryLines[: -1]))
         print(entryLines[-1])
         print()
 
