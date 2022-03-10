@@ -4,7 +4,7 @@
 
 alias touchmap='xinput map-to-output "ELAN900C:00 04F3:2C6B" eDP-1' # Vu-Precision
 
-alias l='ls -lh'
+alias l='ls -lh --group-directories-first'
 
 alias notebook='jupyter notebook 2>/dev/null &'
 
