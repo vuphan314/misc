@@ -4,6 +4,8 @@
 
 alias touchmap='xinput map-to-output "ELAN900C:00 04F3:2C6B" eDP-1' # Vu-Precision
 
+alias bibtidy='bibtex-tidy --curly --space=4 --align=0 --sort=key --duplicates=key,doi,abstract,citation --merge=combine --strip-enclosing-braces --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --remove-empty-fields --enclosing-braces=title'
+
 alias l='ls -lh --group-directories-first'
 
 alias notebook='jupyter notebook 2>/dev/null &'
