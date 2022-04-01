@@ -22,8 +22,6 @@ export PATH="$PATH:~/bin"
 export PATH="$PATH:~/code/misc"
 export PATH="$PATH:~/Dropbox/main"
 export PATH="$PATH:~/Dropbox/main/bin"
-export PATH="$PATH:~/Dropbox/main/eval"
-export PATH="$PATH:~/Dropbox/main/eval/bin"
 
 ################################################################################
 
