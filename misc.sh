@@ -19,7 +19,7 @@ function set_action {
 ################################################################################
 
 function execute_ls {
-  tree ~ -L 2 --dirsfirst -I 'bin|CiscoSpark|code|snap|Zotero'
+  tree ~ -L 2 --dirsfirst -I 'bin|code|snap|Zotero'
 }
 
 ################################################################################
@@ -27,10 +27,10 @@ function execute_ls {
 ## receives $action
 function execute_git {
   for d in $(find ~/code -mindepth 1 -maxdepth 1 | sort); do
+    echo =======================================================================
     echo $d
     cd $d
     $action
-    echo =======================================================================
   done
 }
 
@@ -49,5 +49,5 @@ function walk {
 
 ################################################################################
 
-clear
+# clear
 walk $@
