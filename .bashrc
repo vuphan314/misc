@@ -17,7 +17,7 @@ function bibtextidy {
 }
 
 function notebook {
-  jupyter notebook $@ 2>/dev/null &
+  jupyter notebook $@ 2> /dev/null &
 }
 
 function connect {
@@ -28,6 +28,10 @@ function nots {
   ssh nots.rice.edu $@
 }
 
+function scpnots {
+  scp $@ nots.rice.edu:/projects/vardi/vhp1
+}
+
 function touchmap { # Vu-Precision
   xinput map-to-output "ELAN900C:00 04F3:2C6B" eDP-1 $@
 }
@@ -36,6 +40,7 @@ function touchmap { # Vu-Precision
 
 export MANPATH="$MANPATH:~/bin/man" # NOTS
 
+export PATH="$PATH:/projects/vardi/vhp1/bin" # NOTS
 export PATH="$PATH:/usr/local/texlive/2021/bin/x86_64-linux"
 export PATH="$PATH:~/bin" # NOTS
 export PATH="$PATH:~/code/misc"
