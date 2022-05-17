@@ -13,7 +13,7 @@ function dropboxclean {
 }
 
 function bibtextidy {
-  bibtex-tidy --curly --space=4 --align=0 --sort=key --duplicates=key,doi,abstract,citation --merge=combine --strip-enclosing-braces --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --remove-empty-fields --enclosing-braces=title $@
+  bibtex-tidy --omit=doi,url,pages,volume,number,publisher,organization,no --curly --space=4 --align=0 --sort=key --duplicates=key,doi,abstract,citation --merge=combine --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --remove-empty-fields --enclosing-braces=title $@
 }
 
 function notebook {
