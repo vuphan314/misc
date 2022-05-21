@@ -44,6 +44,7 @@ export PATH="$PATH:/projects/vardi/vhp1/bin" # NOTS
 export PATH="$PATH:/usr/local/texlive/2021/bin/x86_64-linux"
 export PATH="$PATH:/usr/local/texlive/2022/bin/x86_64-linux"
 export PATH="$PATH:~/bin" # NOTS
+export PATH="$PATH:~/code/dpmcdev/mcc/bin"
 export PATH="$PATH:~/code/misc"
 export PATH="$PATH:~/Dropbox/main"
 export PATH="$PATH:~/Dropbox/main/bin"
