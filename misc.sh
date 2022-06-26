@@ -26,7 +26,7 @@ function execute_ls {
 
 ## receives $action
 function execute_git {
-  for d in $(find ~/code -mindepth 1 -maxdepth 1 | sort); do
+  for d in $(find ~/code ~/Downloads -mindepth 1 -maxdepth 1 | sort); do
     echo =======================================================================
     echo $d
     cd $d
