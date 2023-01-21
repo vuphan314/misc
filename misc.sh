@@ -12,7 +12,7 @@ function execute_ls {
 ################################################################################
 
 function execute_git {
-  for d in $(find ~/code ~/Documents -mindepth 1 -maxdepth 1 | sort); do
+  for d in $(find ~/code -mindepth 1 -maxdepth 1 | sort); do
     echo =======================================================================
     echo $d
     cd $d
